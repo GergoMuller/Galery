@@ -1,0 +1,56 @@
+body{
+  background-color: #eaeaea!important;
+}
+
+main{
+  
+  padding-left: 15%;
+  padding-right: 15%;
+}
+.navdiv{
+  position: fixed;
+  background-color: #212632;
+  transition: background-color 200ms linear;
+  width: 100%;
+  
+}
+
+.nav2 {
+  background-color: #fff !important;
+  color: #212632 !important;
+  transition: background-color 200ms linear;
+ 
+}
+
+.nav a{
+  color: #fff;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 24px;
+  font-style: italic;
+  font-weight: 700;
+  margin-left:  50px;
+  margin-right: 50px;
+  margin-top: 16px;
+
+
+}
+
+ul li{
+ display: inline;
+}
+
+.a2{
+  color: #212632!important;
+}
+
+ul.nav a:focus, ul.nav a:active { 
+  background-color: #aaa; 
+}
+
+#logo{
+  max-height: 83px;
+}
+
+
+
+
