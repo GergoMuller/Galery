@@ -7,27 +7,16 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
-var MainComponent = (function () {
-    function MainComponent() {
-        this.isAdmin = false;
+var Configuration = (function () {
+    function Configuration() {
+        this.server = "http://localhost:8080/Galery/galery/";
+        this.paintingApi = "paintings";
+        this.paintingsUrl = this.server + this.paintingApi;
     }
-    MainComponent.prototype.login = function () {
-        this.isAdmin = true;
-    };
-    return MainComponent;
+    return Configuration;
 }());
-MainComponent = __decorate([
-    core_1.Component({
-        selector: "main-comp",
-        templateUrl: "./app/main/main.html",
-    })
-], MainComponent);
-exports.MainComponent = MainComponent;
-$(document).ready(function () {
-    $(document).scroll(function () {
-        var nav = $('.navdiv');
-        nav.toggleClass('nav2', $(this).scrollTop() > nav.height());
-        $('ul li a').toggleClass('a2', $(this).scrollTop() > nav.height());
-    });
-});
-//# sourceMappingURL=MainComponent.js.map
+Configuration = __decorate([
+    core_1.Injectable()
+], Configuration);
+exports.Configuration = Configuration;
+//# sourceMappingURL=Constants.js.map

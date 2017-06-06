@@ -9,10 +9,13 @@ import {Component} from '@angular/core';
 })
 export class MainComponent{
 
-    public title: string = "Hello Galery";
+    public isAdmin: boolean = false;
+
+    public login(): void{
+        this.isAdmin = true;
+    }
 
 }
-
 
 $(document).ready(function(){
     $(document).scroll(function(){

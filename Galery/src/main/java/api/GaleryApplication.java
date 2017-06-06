@@ -17,7 +17,7 @@ public class GaleryApplication extends Application{
 	public GaleryApplication() {
 		CorsFilter corsFilter = new CorsFilter();
 		corsFilter.getAllowedOrigins().add("*");
-		corsFilter.getAllowedOrigins().add("http://localhost:8080/*");
+		corsFilter.getAllowedOrigins().add("http://localhost:2121/*");
         corsFilter.setAllowedMethods("OPTIONS, GET, POST, DELETE, PUT, PATCH");
         singletons.add(corsFilter);
         

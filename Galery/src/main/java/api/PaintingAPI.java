@@ -10,6 +10,8 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
+
 import entity.Painting;
 import services.PaintingService;
 
@@ -23,6 +25,12 @@ public class PaintingAPI {
 	@POST
 	public Response addPainting(Painting p){
 		String result = service.addPainting(p);
+		ObjectMapper mapper = new ObjectMapper();
+		try{
+			result = mapper.writeValueAsString(result);
+		}catch(Exception e){
+			System.out.println("Parse ERROR");
+		}
 		return Response.status(200).entity(result).build();
 	}
 	

@@ -5,6 +5,10 @@ import {HttpModule} from '@angular/http';
 import {Ng2PageScrollModule} from 'ng2-page-scroll';
 
 import {MainComponent} from '../app/main/MainComponent';
+import {AdminComponent} from '../app/admin/AdminComponent';
+import {PaintingsComponent} from "../app/paintings/PaintingsComponent";
+import { Configuration} from "../app/services/Constants";
+import { PaintingService} from "../app/services/PaintingService";
 
 
 
@@ -16,8 +20,14 @@ import {MainComponent} from '../app/main/MainComponent';
     Ng2PageScrollModule.forRoot(),
   ],
   declarations: [
-    MainComponent
+    MainComponent,
+    AdminComponent,
+    PaintingsComponent,
   ],
-  bootstrap: [  MainComponent  ]
+  bootstrap: [  MainComponent  ],
+  providers: [
+      Configuration,
+      PaintingService,
+  ]
 })
 export class AppModule { }

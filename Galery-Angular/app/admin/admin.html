@@ -1,0 +1,36 @@
+<div id="uploadcont" class="container">
+    <form (ngSubmit)= "savePainting()" #paintingForm="ngForm">
+        <div class="row form-input">
+            <label for="pic" class="col-md-2">painting:</label>
+            <i id="browse" class="glyphicon glyphicon-folder-open"></i>
+            <input (change)="onImgChange($event)" accept="image/*" #imgupload id="browse2"  type="file" name="pic" value="browse" class="col-md-3"  ng-required="true" style="display:none"> 
+        </div>
+        <div class="row form-input">
+            <label for="title" class="col-md-2">title:</label>
+            <input [(ngModel)]="newPainting.title" type="text" name="title"  class="col-md-3" placeholder="title" ng-required="true"/>
+        </div>
+        <div class="row form-input">
+            <label for="size" class="col-md-2">dimensions:</label>
+            <input [(ngModel)]="newPainting.dimensions" type="text" name="size" class="col-md-3" placeholder='100" X 100"' ng-required="true"/>
+        </div>
+        <div class="row form-input">
+            <label for="type" class="col-md-2">type:</label>
+            <input [(ngModel)]="newPainting.type" type="text" name="type"  class="col-md-3" placeholder="oil on canvas" ng-required="true"/>
+        </div>
+        <div class="row form-input">
+            <label for="year" class="col-md-2">year of creation:</label>
+            <input [(ngModel)]="newPainting.year" type="text" name="year"  class="col-md-3" placeholder="2017" ng-required="true"/>
+        </div>
+        <div class="row form-input">
+            <label for="price" class="col-md-2">price in $:</label>
+            <input [(ngModel)]="newPainting.price" type="text" name="price"  class="col-md-3" placeholder="10000" ng-required="true"/>
+        </div>
+
+        <button type="button"  data-classButton="btn btn-mine" [hidden]="paintingForm.form.valid" class="btn btn-mine col-md-offset-2 col-md-1" (click)="savePainting(); paintingForm.reset();">Save</button>
+
+    </form>
+
+    <span calss="success" style="color: forestgreen; margin-left: 50px; margin-top: 15px; font-weight: 700">
+        {{resultString}}
+    </span>
+</div>

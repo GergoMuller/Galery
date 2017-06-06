@@ -8,11 +8,19 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Lob;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
+
+
+
+
 @Entity
 public class Painting implements Serializable {
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
+	@JsonIgnore
 	private long id;
 	
 	@Lob
@@ -24,7 +32,10 @@ public class Painting implements Serializable {
 	
 	private String type;
 	
+	@JsonProperty("year")
 	private String creationYear;
+	
+	private double price;
 
 	public byte[] getPainting() {
 		return painting;
@@ -58,6 +69,7 @@ public class Painting implements Serializable {
 		this.type = type;
 	}
 
+	@JsonProperty("year")
 	public String getCreationYear() {
 		return creationYear;
 	}
@@ -65,9 +77,14 @@ public class Painting implements Serializable {
 	public void setCreationYear(String creationYear) {
 		this.creationYear = creationYear;
 	}
-	
-	
-	
+
+	public double getPrice() {
+		return price;
+	}
+
+	public void setPrice(double price) {
+		this.price = price;
+	}
 	
 
 }

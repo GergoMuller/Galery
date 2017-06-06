@@ -1,4 +1,4 @@
-<div id="mainroot" class="container-fuid">
+<div id="mainroot">
     <div class="navdiv">
         <nav>
             <ul class="nav nav-pills row">
@@ -20,209 +20,20 @@
         </nav>
     </div>
     <div style="padding-top: 100px"></div>
+    <button type="button" (click)="login()">login</button>
+    <admin-comp *ngIf="isAdmin==true"></admin-comp>
     <main>
         <div id="home">
             home
         </div>
 
-        <div id="paintings">
+        <paintings-comp id="paintings"></paintings-comp>
         
-            <div>kep</div>
-            <div>kep</div>
-            <div>kep</div>
-            <div>kep</div>
-            <div>kep</div>
-            <div>kep</div>
-            <div>kep</div>
-            <div>kep</div>
-            <div>kep</div>
-            <div>kep</div>
-            <div>kep</div>
-            <div>kep</div>
-            <div>kep</div>
-            <div>kep</div>
-            <div>kep</div>
-            <div>kep</div>
-            <div>kep</div>
-            <div>kep</div>
-            <div>kep</div>
-            <div>kep</div>
-            <div>kep</div>
-            <div>kep</div>
-            <div>kep</div>
-            <div>kep</div>
-            <div>kep</div>
-            <div>kep</div>
-            <div>kep</div>
-            <div>kep</div>
-            <div>kep</div>
-            <div>kep</div>
-            <div>kep</div>
-            <div>kep</div>
-            <div>kep</div>
-            <div>kep</div>
-            <div>kep</div>
-            <div>kep</div>
-            <div>kep</div>
-            <div>kep</div>
-            <div>kep</div>
-            <div>kep</div>
-            <div>kep</div>
-            <div>kep</div>
-            <div>kep</div>
-            <div>kep</div>
-            <div>kep</div>
-            <div>kep</div>
-            <div>kep</div>
-            <div>kep</div>
-            <div>kep</div>
-            <div>kep</div>
-            <div>kep</div>
-            <div>kep</div>
-            <div>kep</div>
-            <div>kep</div>
-            <div>kep</div>
-            <div>kep</div>
-            <div>kep</div>
-            <div>kep</div>
-            <div>kep</div>
-            <div>kep</div>
-            <div>kep</div>
-            <div>kep</div>
-            <div>kep</div>
-            <div>kep</div>
-            <div>kep</div>
-            <div>kep</div>
-            <div>kep</div>
-            <div>kep</div>
-            <div>kep</div>
-            <div>kep</div>
-            <div>kep</div>
-            <div>kep</div>
-            <div>kep</div>
-            <div>kep</div>
-            <div>kep</div>
-            <div>kep</div>
-            <div>kep</div>
-            <div>kep</div>
-            <div>kep</div>
-            <div>kep</div>
-            <div>kep</div>
-            <div>kep</div>
-            <div>kep</div>
-            <div>kep</div>
-            <div>kep</div>
-            <div>kep</div>
-            <div>kep</div>
-            <div>kep</div>
-            <div>kep</div>
-            <div>kep</div>
-            <div>kep</div>
-            <div>kep</div>
-            <div>kep</div>
-            <div>kep</div>
-            <div>kep</div>
-            <div>kep</div>
-            <div>kep</div>
-            <div>kep</div>
-            <div>kep</div>
-            <div>kep</div>
-            <div>kep</div>
-            <div>kep</div>
-            <div>kep</div>
-            <div>kep</div>
-            <div>kep</div>
-            <div>kep</div>
-            <div>kep</div>
-            <div>kep</div>
-            <div>kep</div>
-            <div>kep</div>
-            <div>kep</div>
-            <div>kep</div>
-            <div>kep</div>
-            <div>kep</div>
-            <div>kep</div>
-            <div>kep</div>
-            <div>kep</div>
-            <div>kep</div>
-            <div>kep</div>
-            <div>kep</div>
-            <div>kep</div>
-            <div>kep</div>
-            <div>kep</div>
-            <div>kep</div>
-            <div>kep</div>
-            <div>kep</div>
-            <div>kep</div>
-            <div>kep</div>
-            <div>kep</div>
-            <div>kep</div>
-            <div>kep</div>
-            <div>kep</div>
-            <div>kep</div>
-            <div>kep</div>
-            <div>kep</div>
-            <div>kep</div>
-            <div>kep</div>
-            <div>kep</div>
-            <div>kep</div>
-            <div>kep</div>
-            <div>kep</div>
-            <div>kep</div>
-            <div>kep</div>
-            <div>kep</div>
-            <div>kep</div>
-            <div>kep</div>
-            <div>kep</div>
-            <div>kep</div>
-            <div>kep</div>
-            <div>kep</div>
-            <div>kep</div>
-            <div>kep</div>
-            <div>kep</div>
-            <div>kep</div>
-            <div>kep</div>
-            <div>kep</div>
-            <div>kep</div>
-            <div>kep</div>
-            <div>kep</div>
-            <div>kep</div>
-            <div>kep</div>
-            <div>kep</div>
-            <div>kep</div>
-            <div>kep</div>
-            <div>kep</div>
-            <div>kep</div>
-            <div>kep</div>
-            <div>kep</div>
-            <div>kep</div>
-            <div>kep</div>
-            <div>kep</div>
-            <div>kep</div>
-            <div>kep</div>
-            <div>kep</div>
-            <div>kep</div>
-            <div>kep</div>
-            <div>kep</div>
-            <div>kep</div>
-            <div>kep</div>
-            <div>kep</div>
-            <div>kep</div>
-            <div>kep</div>
-            <div>kep</div>
-            <div>kep</div>
-            <div>kep</div>
-            <div>kep</div>
-            <div>kep</div>
-            <div>kep</div>
-            <div>kep</div>
-            <div>kep</div>
-            <div>kep</div>
-            <div>kep</div>
+            
 
             
 
-        </div>
+        
 
         <div id="contact">
             contact

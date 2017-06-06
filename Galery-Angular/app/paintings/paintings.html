@@ -1,0 +1,11 @@
+
+<div class="container">
+    <header class="row">
+     <h1 class="paintings-title col-xs-offset-5">P a i n t i n g s</h1>
+    </header>
+    <div class="row">
+        <div *ngFor="let painting of paintings" class="col-md-4 paintingdiv">
+            <img class="painting" src="data:image/jpg;base64,{{painting.painting}}" alt="Andrew Manaylo">
+        </div>
+    </div>
+</div>
