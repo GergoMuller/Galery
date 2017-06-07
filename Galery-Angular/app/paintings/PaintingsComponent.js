@@ -33,6 +33,17 @@ var PaintingsComponent = (function (_super) {
         this.service.getAllPaintings()
             .subscribe(function (res) { return _this.paintings = res; }, function (error) { return console.log(error); }, function () { return console.log("REST get painting done"); });
     };
+    PaintingsComponent.prototype.over = function (i) {
+        var elementName = "#details" + i;
+        $(elementName).removeAttr("hidden");
+        $("#p" + i).addClass("fadep");
+    };
+    PaintingsComponent.prototype.leave = function (i) {
+        var elementName = "#details" + i;
+        $(elementName).attr("hidden", "true");
+        $("#p" + i).removeClass("fadep");
+    };
+    PaintingsComponent.prototype.ngAfterViewChecked = function () { };
     return PaintingsComponent;
 }(core_1.OnInit));
 PaintingsComponent = __decorate([

@@ -22,6 +22,20 @@ export class PaintingsComponent extends OnInit{
                 () => console.log("REST get painting done")
             );
     }
+
+    public over(i: number){
+      let elementName: string = "#details" + i;
+      $(elementName).removeAttr("hidden");
+      $("#p"+i).addClass("fadep");  
+    }
+
+    public leave(i: number){
+      let elementName: string = "#details" + i;
+      $(elementName).attr("hidden","true"); 
+      $("#p"+i).removeClass("fadep");   
+    }
+
+    ngAfterViewChecked(){}
     
 
 

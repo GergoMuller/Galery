@@ -4,8 +4,18 @@
      <h1 class="paintings-title col-xs-offset-5">P a i n t i n g s</h1>
     </header>
     <div class="row">
-        <div *ngFor="let painting of paintings" class="col-md-4 paintingdiv">
-            <img class="painting" src="data:image/jpg;base64,{{painting.painting}}" alt="Andrew Manaylo">
+        <div *ngFor="let painting of paintings, let i = index" class="paintingdiv col-md-4" 
+                (mouseover)="over(i)"
+                (mouseleave)="leave(i)">
+
+             <div id="details{{i}}" class="pdetails" hidden="true">
+                <span class="row details-title">{{painting.title}}</span><br/>
+                <span class="">{{painting.type}}</span><br/>
+                <span class="">{{painting.dimensions}}</span><br/>
+                <span class="">{{painting.year}}</span><br/>
+                <span class="">{{painting.price}}$</span> 
+            </div>
+            <img id="p{{i}}" class="painting" src="data:image/jpg;base64,{{painting.painting}}" alt="Andrew Manaylo">    
         </div>
     </div>
 </div>

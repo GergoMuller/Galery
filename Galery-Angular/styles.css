@@ -1,31 +1,33 @@
+/* Main page nav*/
 body{
-  background-color: #eaeaea!important;
+  background-color: #f1f1f1!important;
 }
 
 main{
   
-  padding-left: 15%;
-  padding-right: 15%;
+  padding-left: 10%;
+  padding-right: 10%;
 }
 .navdiv{
   position: fixed;
   background-color: #212632;
   transition: background-color 200ms linear;
-  width: 100%;
-  
+  width: 100%; 
+  z-index: 100;
 }
 
 .nav2 {
-  background-color: #fff !important;
+  background-color: rgba(255,255,255,0.95) !important;
   color: #212632 !important;
   transition: background-color 200ms linear;
+  border-bottom: 1px solid #ddd;
  
 }
 
 .nav a{
   color: #fff;
   font-family: 'Times New Roman', Times, serif;
-  font-size: 24px;
+  font-size: 20px;
   font-style: italic;
   font-weight: 700;
   margin-left:  50px;
@@ -43,14 +45,106 @@ ul li{
   color: #212632!important;
 }
 
-ul.nav a:focus, ul.nav a:active { 
-  background-color: #aaa; 
+ul.nav a:hover, ul.nav a:focus, ul.nav a:active { 
+  color: #888!important; 
+  font-size: 28px;
+  background-color: inherit!important; 
+  
 }
 
 #logo{
   max-height: 83px;
 }
 
+/* Admin component*/
+
+.btn-mine{
+  background-color: #212632;
+  color: #fff;
+}
+
+.btn-mine:hover, .btn-mine:focus{
+  color: #fff!important;
+  background-color:  #111622 
+}
+
+.form-input{
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.success{
+  color: forestgreen!important;
+  margin-left: 50px;
+}
+
+#uploadcont{
+  padding: 30px;
+  border: 1px solid #ddd;
+  background-color: #fafafa;
+}
+
+#browse{
+  cursor: pointer; 
+}
+
+/* Paintings */
+
+.painting{
+  max-width: 96%;
+  max-height: 98%;
+  margin-left: 10px;
+  margin-right: 10px;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  box-shadow: 6px 6px 5px #888888;
+}
+
+.pdetails{
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  z-index: 1;
+  font-family: 'Cardo', Georgia, "Times New Roman", serif;
+  font-size: 15px;
+  color: white;
+  padding-left: 20px;
+  font-style: italic;
+}
+
+.details-title{
+  font-family: 'Cardo', Georgia, "Times New Roman", serif;
+  font-size: 20px;
+  font-weight: 700;
+  padding-left: 80px;
+  
+}
+
+.fadep{
+  filter: grayscale(0%) brightness(70%) sepia(50%);
+  transition: filter 0.6s ease 0s;
+}
+
+
+.paintingdiv{
+  margin-top: 20px;
+  padding-right: 0px!important;
+  padding-left: 0px!important;
+  height: 250px;
+  position: absolute;
+  cursor: pointer;
+}
+
+.paintings-title{
+    font-family: 'Cardo', Georgia, "Times New Roman", serif;
+    font-size: 40px;
+    margin-top: 70px;
+    margin-bottom: 70px;
+    font-stretch: expanded;
+    font-style: italic;
+    font-weight: 700;
+}
 
 
 
