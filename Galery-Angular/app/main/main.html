@@ -3,31 +3,43 @@
         <nav>
             <ul class="nav nav-pills row">
                 <li class="col-md-2">  
-                    <img id="logo" calss="logo" src="http://andrewmanaylo.com/wp-content/uploads/2017/03/Manaylo_signature.png" alt="Andrew Manaylo"/> 
+                    <a href="#mainroot" pageScroll style="padding:0px;">
+                        <img id="logo" calss="logo" src="http://andrewmanaylo.com/wp-content/uploads/2017/03/Manaylo_signature.png" alt="Andrew Manaylo"/> 
+                    </a>
                 </li>
                 <li role="presentation" class="pull-right">
-                    <a pageScroll href="#contact">Contact</a>
+                    <a pageScroll href="#contact" class="a1">Contact</a>
                 </li>
                 
                 <li role="presentation" class="pull-right">
-                    <a pageScroll  href="#paintings" >Paintings</a>
+                    <a pageScroll  href="#paintings" class="a1">Paintings</a>
                 </li>
                 <li role="presentation" class="pull-right"> 
-                    <a  id="f" pageScroll href="#home" >Home</a>
+                    <a  id="f" pageScroll href="#mainroot" class="a1">Home</a>
                 </li>
                 
             </ul>    
         </nav>
     </div>
     <div style="padding-top: 100px"></div>
-    <button type="button" (click)="login()">login</button>
+    <button class="btn btn-mine" type="button" (click)="login()">login</button>
     <admin-comp *ngIf="isAdmin==true"></admin-comp>
     <main>
-        <div id="home">
-            home
+        <div class="container">
+            <div class="row home-cont">
+                <aside class="col-md-3 am-name">
+                    <h1>Andrew</h1>
+                    <h1>Manaylo</h1>
+                    <img class="cities" src="http://andrewmanaylo.com/wp-content/uploads/2017/03/Képernyőfotó-2017-03-23-15.44.25.png">
+                </aside>
+                <div class="col-md-9 ">
+                    <img class="main-pic" src="http://andrewmanaylo.com/wp-content/uploads/2015/06/036190_627147393dcd47ee926124e7e176b92emv2.jpg" alt="mainpic">
+                </div>
+            </div>
+            
         </div>
-
-        <paintings-comp id="paintings"></paintings-comp>
+        <div id ="paintings" style="height: 80px;"></div>
+        <paintings-comp></paintings-comp>
         
             
 

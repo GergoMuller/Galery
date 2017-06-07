@@ -1,6 +1,6 @@
 /* Main page nav*/
 body{
-  background-color: #f1f1f1!important;
+  background-color: #fff!important;
 }
 
 main{
@@ -10,22 +10,22 @@ main{
 }
 .navdiv{
   position: fixed;
-  background-color: #212632;
+  background-color: #fff;
   transition: background-color 200ms linear;
   width: 100%; 
   z-index: 100;
+  border-bottom: 1px solid #2c1401;
+  color: #2c1401;
 }
 
 .nav2 {
-  background-color: rgba(255,255,255,0.95) !important;
-  color: #212632 !important;
+  background-color: rgba(44,20,1,0.98) !important;
+  color: #fff!important;
   transition: background-color 200ms linear;
-  border-bottom: 1px solid #ddd;
- 
 }
 
-.nav a{
-  color: #fff;
+.a1{
+  color: #2c1401;
   font-family: 'Times New Roman', Times, serif;
   font-size: 20px;
   font-style: italic;
@@ -33,20 +33,14 @@ main{
   margin-left:  50px;
   margin-right: 50px;
   margin-top: 16px;
-
-
-}
-
-ul li{
- display: inline;
 }
 
 .a2{
-  color: #212632!important;
+  color: #fff!important;
 }
 
 ul.nav a:hover, ul.nav a:focus, ul.nav a:active { 
-  color: #888!important; 
+  color: #212632;
   font-size: 28px;
   background-color: inherit!important; 
   
@@ -54,6 +48,7 @@ ul.nav a:hover, ul.nav a:focus, ul.nav a:active {
 
 #logo{
   max-height: 83px;
+  cursor: pointer;
 }
 
 /* Admin component*/
@@ -82,6 +77,7 @@ ul.nav a:hover, ul.nav a:focus, ul.nav a:active {
   padding: 30px;
   border: 1px solid #ddd;
   background-color: #fafafa;
+  margin-bottom: 50px;
 }
 
 #browse{
@@ -118,17 +114,16 @@ ul.nav a:hover, ul.nav a:focus, ul.nav a:active {
   font-size: 20px;
   font-weight: 700;
   padding-left: 80px;
-  
 }
 
 .fadep{
-  filter: grayscale(0%) brightness(70%) sepia(50%);
-  transition: filter 0.6s ease 0s;
+  filter: grayscale(20%) brightness(70%) sepia(70%);
+  transition: filter 0.7s ease 0s;
 }
 
 
 .paintingdiv{
-  margin-top: 20px;
+  margin-top: 50px;
   padding-right: 0px!important;
   padding-left: 0px!important;
   height: 250px;
@@ -144,7 +139,37 @@ ul.nav a:hover, ul.nav a:focus, ul.nav a:active {
     font-stretch: expanded;
     font-style: italic;
     font-weight: 700;
+    color: #2c1401;
 }
 
+/* HOME  */
 
+.am-name{
+  font-size: 70px;
+  line-height: 22px;
+  font-family: 'Cardo', Georgia, "Times New Roman", serif;
+  height: 100%;
+  border-right: 1px solid #2c1401;
+  padding-top: 150px;
+  letter-spacing: 5px;
+  color: #2c1401;
+}
+
+.main-pic{
+  max-height: 100%;
+  max-width: 100%;
+  padding-left: 10px;
+  padding-top: 30px;
+}
+
+.cities{
+  max-height: 100%;
+  max-width: 100%;
+  margin-top: 80px;
+  margin-left: -50px;
+}
+
+.home-cont{
+    height: 600px;
+}
 

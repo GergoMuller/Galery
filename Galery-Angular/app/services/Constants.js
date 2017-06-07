@@ -9,7 +9,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var Configuration = (function () {
     function Configuration() {
-        this.server = "http://localhost:8080/Galery/galery/";
+        this.server = "http://localhost:8080/Galery-0.0.1-SNAPSHOT/galery/";
         this.paintingApi = "paintings";
         this.paintingsUrl = this.server + this.paintingApi;
     }
