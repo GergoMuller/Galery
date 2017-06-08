@@ -22,7 +22,7 @@
         </nav>
     </div>
     <div style="padding-top: 100px"></div>
-    <button class="btn btn-mine" type="button" (click)="login()">login</button>
+    <button type="button" class="btn btn-mine" data-toggle="modal" data-target="#loginModal">Login</button>
     <admin-comp *ngIf="isAdmin==true"></admin-comp>
     <main>
         <div class="container">
@@ -41,14 +41,32 @@
         <div id ="paintings" style="height: 80px;"></div>
         <paintings-comp></paintings-comp>
         
-            
-
-            
-
-        
-
-        <div id="contact">
-            contact
+        <div id="contact" style="height: 80;"></div>
+        <div >
+            <h1 class="paintings-title">Contact</h1>
         </div>
     </main>
+</div>
+
+<!-- Login Modal -->
+<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content login-modal">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">log in</h4>
+      </div>
+      <div class="modal-body">
+            <label for="usr">username:</label>
+            <input type="text" id="usr" name="usr" [(ngModel)]="acc.user">
+            <label for="pw">password:</label>
+            <input type="text" id="pw" name="pw" [(ngModel)]="acc.password">
+    
+      </div>
+      <div class="modal-footer">
+            <span class="pull-left" style="font-size: 20px; display: list-item; margin-left: 10px;">{{resultString}}</span>
+            <button class="btn btn-mine" type="button" (click)="login()">login</button>
+      </div>
+    </div>
+  </div>
 </div>

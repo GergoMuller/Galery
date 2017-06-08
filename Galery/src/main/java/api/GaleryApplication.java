@@ -22,6 +22,7 @@ public class GaleryApplication extends Application{
         singletons.add(corsFilter);
         
         classes.add(PaintingAPI.class);
+        classes.add(AdminApi.class);
 	}
 	
 	@Override

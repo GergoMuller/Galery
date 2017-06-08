@@ -11,7 +11,9 @@ var Configuration = (function () {
     function Configuration() {
         this.server = "http://localhost:8080/Galery-0.0.1-SNAPSHOT/galery/";
         this.paintingApi = "paintings";
+        this.adminApi = "admin";
         this.paintingsUrl = this.server + this.paintingApi;
+        this.admingsUrl = this.server + this.adminApi;
     }
     return Configuration;
 }());

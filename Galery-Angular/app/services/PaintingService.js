@@ -18,6 +18,7 @@ var PaintingService = (function () {
         this.http = http;
         this.config = config;
         this.url = config.paintingsUrl;
+        this.adminUrl = config.admingsUrl;
         this.header = new http_1.Headers();
         this.header.append("Content-Type", "application/json");
         this.header.append("Accept", "application/json, text/plain");
@@ -29,6 +30,10 @@ var PaintingService = (function () {
     };
     PaintingService.prototype.getAllPaintings = function () {
         return this.http.get(this.url)
+            .map(function (resp) { return resp.json(); });
+    };
+    PaintingService.prototype.login = function (a) {
+        return this.http.post(this.adminUrl, JSON.stringify(a), { headers: this.header })
             .map(function (resp) { return resp.json(); });
     };
     return PaintingService;

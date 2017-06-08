@@ -1,5 +1,6 @@
 import {Component} from '@angular/core';
-
+import{PaintingService} from "../services/PaintingService";
+import{Account} from "../model/Account";
 
 
 
@@ -9,12 +10,24 @@ import {Component} from '@angular/core';
 })
 export class MainComponent{
 
+    constructor(private service :PaintingService){}
+
     public isAdmin: boolean = false;
+    public acc: Account = new Account();
+    public resultString: string;
 
     public login(): void{
-        this.isAdmin = true;
+        this.service.login(this.acc)
+            .subscribe(
+            (res: string) => this.resultString = res,
+            error => console.log(error)
+            )
+        setTimeout(() => {if(this.resultString === "Successful login"){
+            this.isAdmin = true;
+        } },200);
+        
+        this.acc= new Account();
     }
-
 }
 
 $(document).ready(function(){

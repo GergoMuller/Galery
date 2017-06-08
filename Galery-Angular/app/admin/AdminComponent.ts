@@ -1,7 +1,7 @@
 import { Component, ViewChild, ElementRef} from "@angular/core";
 import {Painting} from "../model/Painting";
 import{PaintingService} from "../services/PaintingService";
-
+import {Account} from "../model/Account";
 
 
 @Component({
@@ -15,6 +15,22 @@ export class AdminComponent{
     public resultString: string;
 
     constructor(private service :PaintingService){}
+
+
+    public savePainting(): void{
+        this.service.savePainting(this.newPainting)
+            .subscribe(
+                (res: string) => this.resultString = res,
+                error => { console.log(error); this.resultString = "Error, only jpeg is supported"},
+                () => console.log("REST post painting done")
+            );
+    } 
+
+    ngOnInit(){
+         var a = $('#browse');
+         a.click( function(){
+              $("#browse2").trigger("click"); }); 
+    }
 
     public onImgChange(event){
         this.readThis(event.target);
@@ -31,20 +47,6 @@ export class AdminComponent{
         myReader.readAsDataURL(file);
     }
 
-    public savePainting(): void{
-        this.service.savePainting(this.newPainting)
-            .subscribe(
-                (res: string) => this.resultString = res,
-                error => { console.log(error); this.resultString = "Error, only jpeg is supported"},
-                () => console.log("REST post painting done")
-            );
-    }  
-
-    ngOnInit(){
-         var a = $('#browse');
-         a.click( function(){
-              $("#browse2").trigger("click"); }); 
-    }
 }
 
 

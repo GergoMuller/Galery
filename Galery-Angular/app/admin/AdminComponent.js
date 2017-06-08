@@ -17,6 +17,17 @@ var AdminComponent = (function () {
         this.service = service;
         this.newPainting = new Painting_1.Painting();
     }
+    AdminComponent.prototype.savePainting = function () {
+        var _this = this;
+        this.service.savePainting(this.newPainting)
+            .subscribe(function (res) { return _this.resultString = res; }, function (error) { console.log(error); _this.resultString = "Error, only jpeg is supported"; }, function () { return console.log("REST post painting done"); });
+    };
+    AdminComponent.prototype.ngOnInit = function () {
+        var a = $('#browse');
+        a.click(function () {
+            $("#browse2").trigger("click");
+        });
+    };
     AdminComponent.prototype.onImgChange = function (event) {
         this.readThis(event.target);
     };
@@ -29,17 +40,6 @@ var AdminComponent = (function () {
             _this.newPainting.painting = _this.newPainting.painting.substring(23);
         };
         myReader.readAsDataURL(file);
-    };
-    AdminComponent.prototype.savePainting = function () {
-        var _this = this;
-        this.service.savePainting(this.newPainting)
-            .subscribe(function (res) { return _this.resultString = res; }, function (error) { console.log(error); _this.resultString = "Error, only jpeg is supported"; }, function () { return console.log("REST post painting done"); });
-    };
-    AdminComponent.prototype.ngOnInit = function () {
-        var a = $('#browse');
-        a.click(function () {
-            $("#browse2").trigger("click");
-        });
     };
     return AdminComponent;
 }());
