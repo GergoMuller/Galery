@@ -167,8 +167,14 @@ ul.nav a:hover, ul.nav a:focus, ul.nav a:active {
 }
 
 .back-forth{
-  margin-top: 10%;
+  margin-top: 15%;
   cursor: pointer;
+  color: #fff;
+  padding-left: 35px!important;
+}
+
+.back-forth:hover{
+  color: #bbb!important;
 }
 
 /* HOME  */
