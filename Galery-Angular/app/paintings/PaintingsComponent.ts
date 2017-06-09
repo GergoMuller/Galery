@@ -9,6 +9,8 @@ import{PaintingService} from "../services/PaintingService";
 export class PaintingsComponent extends OnInit{
     
     public paintings: Painting[];
+    public selectedPainting: Painting = new Painting();
+    public selIndex: number;
 
     constructor(private service: PaintingService){
         super();
@@ -33,6 +35,23 @@ export class PaintingsComponent extends OnInit{
       let elementName: string = "#details" + i;
       $(elementName).attr("hidden","true"); 
       $("#p"+i).removeClass("fadep");   
+    }
+
+    public showBig(i: number){
+        this.selectedPainting = this.paintings[i];
+        this.selIndex = i;
+    }
+
+    public forward(i: number){
+        if(this.selIndex < this.paintings.length-1){
+            this.selectedPainting = this.paintings[this.selIndex++ + 1];
+        }
+    }
+
+    public back(i: number){
+        if(this.selIndex > 0){
+            this.selectedPainting = this.paintings[this.selIndex-- - 1];
+        }
     }
 
     ngAfterViewChecked(){}

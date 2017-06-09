@@ -20,12 +20,14 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
+var Painting_1 = require("../model/Painting");
 var PaintingService_1 = require("../services/PaintingService");
 var PaintingsComponent = (function (_super) {
     __extends(PaintingsComponent, _super);
     function PaintingsComponent(service) {
         var _this = _super.call(this) || this;
         _this.service = service;
+        _this.selectedPainting = new Painting_1.Painting();
         return _this;
     }
     PaintingsComponent.prototype.ngOnInit = function () {
@@ -42,6 +44,20 @@ var PaintingsComponent = (function (_super) {
         var elementName = "#details" + i;
         $(elementName).attr("hidden", "true");
         $("#p" + i).removeClass("fadep");
+    };
+    PaintingsComponent.prototype.showBig = function (i) {
+        this.selectedPainting = this.paintings[i];
+        this.selIndex = i;
+    };
+    PaintingsComponent.prototype.forward = function (i) {
+        if (this.selIndex < this.paintings.length - 1) {
+            this.selectedPainting = this.paintings[this.selIndex++ + 1];
+        }
+    };
+    PaintingsComponent.prototype.back = function (i) {
+        if (this.selIndex > 0) {
+            this.selectedPainting = this.paintings[this.selIndex-- - 1];
+        }
     };
     PaintingsComponent.prototype.ngAfterViewChecked = function () { };
     return PaintingsComponent;

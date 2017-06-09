@@ -19,7 +19,7 @@ main{
 }
 
 .nav2 {
-  background-color: rgba(44,20,1,0.98) !important;
+  background-color: rgba(35,16,1,0.98) !important;
   color: #fff!important;
   transition: background-color 200ms linear;
 }
@@ -118,12 +118,12 @@ ul.nav a:hover, ul.nav a:focus, ul.nav a:active {
 
 .fadep{
   filter: grayscale(20%) brightness(70%) sepia(70%);
-  transition: filter 0.7s ease 0s;
+  transition: filter 0.5s ease 0s;
 }
 
 
 .paintingdiv{
-  margin-top: 50px;
+  margin-top: 30px;
   padding-right: 0px!important;
   padding-left: 0px!important;
   height: 250px;
@@ -140,6 +140,35 @@ ul.nav a:hover, ul.nav a:focus, ul.nav a:active {
     font-style: italic;
     font-weight: 700;
     color: #2c1401;
+}
+
+.modal-lg{
+  width: 200%!important;
+  left: -50%;
+  background-color: rgba(0,0,0,0)!important;
+  box-shadow: 0px 0px 0px #fff!important;
+  border: 0px!important;
+}
+
+.full-pic{
+  max-width: 120%;
+  max-height: 120%;
+  padding: 5px!important;
+}
+
+.fullp-cont{
+  margin-right: -85px!important;
+  margin-left: -25px!important;
+}
+
+.full-section-title{
+  color: #fff;
+  font-family: 'Cardo', Georgia, "Times New Roman", serif;
+}
+
+.back-forth{
+  margin-top: 10%;
+  cursor: pointer;
 }
 
 /* HOME  */

@@ -8,14 +8,41 @@
                 (mouseover)="over(i)"
                 (mouseleave)="leave(i)">
 
-             <div id="details{{i}}" class="pdetails" hidden="true">
+             <div id="details{{i}}" class="pdetails" hidden="true" (click)="showBig(i)" data-toggle="modal" data-target="#fullViewModal">
                 <span class="row details-title">{{painting.title}}</span><br/>
                 <span class="">{{painting.type}}</span><br/>
                 <span class="">{{painting.dimensions}}</span><br/>
                 <span class="">{{painting.year}}</span><br/>
                 <span class="">{{painting.price}}$</span> 
             </div>
-            <img id="p{{i}}" class="painting" src="data:image/jpg;base64,{{painting.painting}}" alt="Andrew Manaylo">    
+            <img id="p{{i}}" class="painting" src="data:image/jpg;base64,{{painting.painting}}" alt="Andrew Manaylo"
+                (click)="showBig(i)" data-toggle="modal" data-target="#fullViewModal">    
         </div>
     </div>
+</div>
+
+
+<!-- FullView Modal -->
+<div class="modal fade" style="background-color: rgba(0,0,0,0.7)" id="fullViewModal" tabindex="-1" role="dialog" aria-labelledby="fullViewModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content modal-lg">
+      <div class="modal-header" style="border-bottom: 0px;">
+        <a style="cursor: pointer; float: right">
+            <i class="glyphicon glyphicon-remove" style="color: white!important" type="button"  data-dismiss="modal" aria-label="Close"></i>
+        </a>
+      </div>
+      <div class="modal-body" style="padding: 0px!important">
+          <div class="row">
+              <h3 class="full-pic col-md-5 col-xs-offset-1 full-section-title"> original</h3>
+              <h3 class="full-pic col-md-5 full-section-title" style="margin-left: 40px"> imprint</h3> 
+          </div>
+          <div class="row fullp-cont">
+            <a (click)="back()" class="col-md-1 back-forth"><i class="glyphicon glyphicon-chevron-left" style="color: #fff"></i> </a>
+            <img class="full-pic col-md-5" src="data:image/jpg;base64,{{selectedPainting.painting}}" alt="ORIGINAL">
+            <img class="full-pic col-md-5" src="data:image/jpg;base64,{{selectedPainting.painting}}" alt="IMPIRINT">
+            <a (click)="forward()" class="col-md-1 back-forth"><i class="glyphicon glyphicon-chevron-right" style="color: #fff"></i> </a>
+          </div>
+      </div>
+    </div>
+  </div>
 </div>
