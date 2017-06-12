@@ -42,6 +42,9 @@
             <img class="full-pic col-md-5" src="data:image/jpg;base64,{{selectedPainting.painting}}" alt="IMPIRINT">
             <a (click)="forward()" class="col-md-1 back-forth"><i class="glyphicon glyphicon-chevron-right"></i> </a>
           </div>
+          <div *ngIf="isAdmin" class="row">
+              <a href="" (click)="delete()" style="color: white" data-dismiss="modal" class="col-xs-offset-1">delete</a>
+          </div>
       </div>
     </div>
   </div>

@@ -1,6 +1,7 @@
-import { Component, OnInit} from "@angular/core";
+import { Component, OnInit, Input} from "@angular/core";
 import {Painting} from "../model/Painting";
 import{PaintingService} from "../services/PaintingService";
+import * as _ from "lodash";
 
 @Component({
     selector: "paintings-comp",
@@ -8,6 +9,8 @@ import{PaintingService} from "../services/PaintingService";
 })
 export class PaintingsComponent extends OnInit{
     
+    @Input()
+    public isAdmin: boolean;
     public paintings: Painting[];
     public selectedPainting: Painting = new Painting();
     public selIndex: number;
@@ -17,6 +20,10 @@ export class PaintingsComponent extends OnInit{
     }
 
     public ngOnInit(): void{
+        this.refreshPaintings();
+    }
+
+    public refreshPaintings(): void{
         this.service.getAllPaintings()
             .subscribe(
                 (res: Painting[]) => this.paintings = res,
@@ -24,6 +31,11 @@ export class PaintingsComponent extends OnInit{
                 () => console.log("REST get painting done")
             );
     }
+
+    public delete(){
+        this.service.delete(this.selectedPainting.id);
+        this.paintings.splice(this.selIndex,1);  
+    } 
 
     public over(i: number){
       let elementName: string = "#details" + i;

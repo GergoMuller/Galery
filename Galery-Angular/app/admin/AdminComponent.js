@@ -15,12 +15,14 @@ var PaintingService_1 = require("../services/PaintingService");
 var AdminComponent = (function () {
     function AdminComponent(service) {
         this.service = service;
+        this.refreshEvent = new core_1.EventEmitter();
         this.newPainting = new Painting_1.Painting();
     }
     AdminComponent.prototype.savePainting = function () {
         var _this = this;
         this.service.savePainting(this.newPainting)
-            .subscribe(function (res) { return _this.resultString = res; }, function (error) { console.log(error); _this.resultString = "Error, only jpeg is supported"; }, function () { return console.log("REST post painting done"); });
+            .subscribe(function (res) { return _this.resultString = res; }, function (error) { console.log(error); _this.resultString = "ERROR"; }, function () { return console.log("REST post painting done"); });
+        setTimeout(function () { return _this.refreshEvent.emit(); }, 500);
     };
     AdminComponent.prototype.ngOnInit = function () {
         var a = $('#browse');
@@ -44,9 +46,9 @@ var AdminComponent = (function () {
     return AdminComponent;
 }());
 __decorate([
-    core_1.ViewChild("imgupload"),
-    __metadata("design:type", core_1.ElementRef)
-], AdminComponent.prototype, "upload", void 0);
+    core_1.Output(),
+    __metadata("design:type", Object)
+], AdminComponent.prototype, "refreshEvent", void 0);
 AdminComponent = __decorate([
     core_1.Component({
         selector: "admin-comp",

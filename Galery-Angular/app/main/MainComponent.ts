@@ -24,7 +24,7 @@ export class MainComponent{
             )
         setTimeout(() => {if(this.resultString === "Successful login"){
             this.isAdmin = true;
-        } },500);
+        } },1000);
         
         this.acc= new Account();
     }

@@ -1,4 +1,4 @@
-import { Component, ViewChild, ElementRef} from "@angular/core";
+import { Component, ViewChild, ElementRef, EventEmitter, Output} from "@angular/core";
 import {Painting} from "../model/Painting";
 import{PaintingService} from "../services/PaintingService";
 import {Account} from "../model/Account";
@@ -9,8 +9,9 @@ import {Account} from "../model/Account";
     templateUrl: "./app/admin/admin.html",
 })
 export class AdminComponent{
-    @ViewChild("imgupload")
-    private upload: ElementRef;
+   
+    @Output()
+    public refreshEvent = new EventEmitter();
     public newPainting: Painting = new Painting();
     public resultString: string;
 
@@ -21,9 +22,10 @@ export class AdminComponent{
         this.service.savePainting(this.newPainting)
             .subscribe(
                 (res: string) => this.resultString = res,
-                error => { console.log(error); this.resultString = "Error, only jpeg is supported"},
+                error => { console.log(error); this.resultString = "ERROR"},
                 () => console.log("REST post painting done")
             );
+        setTimeout(() => this.refreshEvent.emit(), 500);
     } 
 
     ngOnInit(){

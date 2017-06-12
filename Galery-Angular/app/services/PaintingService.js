@@ -36,6 +36,11 @@ var PaintingService = (function () {
         return this.http.post(this.adminUrl, JSON.stringify(a), { headers: this.header })
             .map(function (resp) { return resp.json(); });
     };
+    PaintingService.prototype.delete = function (id) {
+        var url = this.url + "/" + id;
+        alert(url);
+        this.http.get(url).subscribe();
+    };
     return PaintingService;
 }());
 PaintingService = __decorate([

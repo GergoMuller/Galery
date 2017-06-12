@@ -26,7 +26,7 @@ var MainComponent = (function () {
             if (_this.resultString === "Successful login") {
                 _this.isAdmin = true;
             }
-        }, 200);
+        }, 1000);
         this.acc = new Account_1.Account();
     };
     return MainComponent;

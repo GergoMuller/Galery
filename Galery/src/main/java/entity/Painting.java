@@ -20,7 +20,6 @@ public class Painting implements Serializable {
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
-	@JsonIgnore
 	private long id;
 	
 	@Lob
@@ -36,6 +35,14 @@ public class Painting implements Serializable {
 	private String creationYear;
 	
 	private double price;
+	
+	public long getId() {
+		return id;
+	}
+
+	public void setId(long id) {
+		this.id = id;
+	}
 
 	public byte[] getPainting() {
 		return painting;
@@ -85,6 +92,5 @@ public class Painting implements Serializable {
 	public void setPrice(double price) {
 		this.price = price;
 	}
-	
 
 }

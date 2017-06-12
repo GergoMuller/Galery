@@ -60,4 +60,9 @@ public class PaintingService {
 		return result;
     }
     
+    public void deletePainting(long id){
+    	Painting toDelete = paintingRepo.findBy(id);
+    	paintingRepo.remove(toDelete);
+    }
+    
 }

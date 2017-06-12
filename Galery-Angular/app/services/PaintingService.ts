@@ -37,4 +37,10 @@ export class PaintingService{
             .map((resp: Response) => <string>resp.json());
     }
 
+    public delete(id: number): void{
+        let url = this.url + "/" + id;
+        alert(url);
+        this.http.get(url).subscribe();
+    }
+
 }

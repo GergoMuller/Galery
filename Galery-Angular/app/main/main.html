@@ -23,7 +23,9 @@
     </div>
     <div style="padding-top: 100px"></div>
     <button type="button" class="btn btn-mine" data-toggle="modal" data-target="#loginModal">Login</button>
-    <admin-comp *ngIf="isAdmin==true"></admin-comp>
+
+    <admin-comp *ngIf="isAdmin==true" (refreshEvent)="paintings.refreshPaintings()"></admin-comp>
+
     <main>
         <div class="container">
             <div class="row home-cont">
@@ -39,7 +41,8 @@
             
         </div>
         <div id ="paintings" style="height: 80px;"></div>
-        <paintings-comp></paintings-comp>
+
+        <paintings-comp #paintings [isAdmin]="isAdmin"></paintings-comp>
         
         <div id="contact" style="height: 80;"></div>
         <div >
@@ -58,7 +61,7 @@
       </div>
       <div class="modal-body">
             <label for="usr">username:</label>
-            <input type="text" id="usr" name="usr" [(ngModel)]="acc.user">
+            <input autofocus="true" type="text" id="usr" name="usr" [(ngModel)]="acc.user">
             <label for="pw">password:</label>
             <input type="text" id="pw" name="pw" [(ngModel)]="acc.password">
     

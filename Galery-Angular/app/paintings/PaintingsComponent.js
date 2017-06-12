@@ -31,9 +31,16 @@ var PaintingsComponent = (function (_super) {
         return _this;
     }
     PaintingsComponent.prototype.ngOnInit = function () {
+        this.refreshPaintings();
+    };
+    PaintingsComponent.prototype.refreshPaintings = function () {
         var _this = this;
         this.service.getAllPaintings()
             .subscribe(function (res) { return _this.paintings = res; }, function (error) { return console.log(error); }, function () { return console.log("REST get painting done"); });
+    };
+    PaintingsComponent.prototype.delete = function () {
+        this.service.delete(this.selectedPainting.id);
+        this.paintings.splice(this.selIndex, 1);
     };
     PaintingsComponent.prototype.over = function (i) {
         var elementName = "#details" + i;
@@ -62,6 +69,10 @@ var PaintingsComponent = (function (_super) {
     PaintingsComponent.prototype.ngAfterViewChecked = function () { };
     return PaintingsComponent;
 }(core_1.OnInit));
+__decorate([
+    core_1.Input(),
+    __metadata("design:type", Boolean)
+], PaintingsComponent.prototype, "isAdmin", void 0);
 PaintingsComponent = __decorate([
     core_1.Component({
         selector: "paintings-comp",

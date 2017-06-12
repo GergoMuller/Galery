@@ -3,9 +3,11 @@ package api;
 import java.util.List;
 
 import javax.ejb.EJB;
+import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
+import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
@@ -39,5 +41,11 @@ public class PaintingAPI {
 		return service.getAllPaintings();
 	}
 	
-
+	@GET
+	@Path("/{id}")
+	public void deletePainting(@PathParam("id") long id){
+		System.out.println("DELETE");
+		service.deletePainting(id);
+	}
+	
 }
