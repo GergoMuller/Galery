@@ -3,7 +3,12 @@
         <div class="row form-input">
             <label for="pic" class="col-md-2">painting:</label>
             <i id="browse" class="glyphicon glyphicon-folder-open"></i>
-            <input (change)="onImgChange($event)" accept="image/*" #imgupload id="browse2"  type="file" name="pic" value="browse" class="col-md-3"  ng-required="true" style="display:none"> 
+            <input (change)="onImgChange($event)" accept="image/*" id="browse2"  type="file" name="pic" value="browse" class="col-md-3"  ng-required="true" style="display:none"> 
+        </div>
+        <div class="row form-input">
+            <label for="imp" class="col-md-2">imprint:</label>
+            <i id="imp" class="glyphicon glyphicon-folder-open"></i>
+            <input (change)="onImgChange2($event)" accept="image/*" id="imp2"  type="file" name="imp" value="browse" class="col-md-3"  ng-required="true" style="display:none"> 
         </div>
         <div class="row form-input">
             <label for="title" class="col-md-2">title:</label>
@@ -22,7 +27,7 @@
             <input [(ngModel)]="newPainting.year" type="text" name="year"  class="col-md-3" placeholder="2017" ng-required="true"/>
         </div>
         <div class="row form-input">
-            <label for="price" class="col-md-2">price in $:</label>
+            <label for="price" class="col-md-2">price in Ft:</label>
             <input [(ngModel)]="newPainting.price" type="text" name="price"  class="col-md-3" placeholder="10000" ng-required="true"/>
         </div>
 

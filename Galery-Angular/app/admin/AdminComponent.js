@@ -29,6 +29,10 @@ var AdminComponent = (function () {
         a.click(function () {
             $("#browse2").trigger("click");
         });
+        var a = $('#imp');
+        a.click(function () {
+            $("#imp2").trigger("click");
+        });
     };
     AdminComponent.prototype.onImgChange = function (event) {
         this.readThis(event.target);
@@ -40,6 +44,19 @@ var AdminComponent = (function () {
         myReader.onloadend = function (e) {
             _this.newPainting.painting = myReader.result;
             _this.newPainting.painting = _this.newPainting.painting.substring(23);
+        };
+        myReader.readAsDataURL(file);
+    };
+    AdminComponent.prototype.onImgChange2 = function (event) {
+        this.readThis(event.target);
+    };
+    AdminComponent.prototype.readThis2 = function (inputValue) {
+        var _this = this;
+        var file = inputValue.files[0];
+        var myReader = new FileReader();
+        myReader.onloadend = function (e) {
+            _this.newPainting.imprint = myReader.result;
+            _this.newPainting.imprint = _this.newPainting.painting.substring(23);
         };
         myReader.readAsDataURL(file);
     };

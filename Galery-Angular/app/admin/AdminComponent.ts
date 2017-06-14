@@ -29,9 +29,13 @@ export class AdminComponent{
     } 
 
     ngOnInit(){
-         var a = $('#browse');
-         a.click( function(){
-              $("#browse2").trigger("click"); }); 
+        var a = $('#browse');
+        a.click( function(){
+            $("#browse2").trigger("click"); }); 
+
+        var a = $('#imp');
+        a.click( function(){
+            $("#imp2").trigger("click"); }); 
     }
 
     public onImgChange(event){
@@ -43,8 +47,23 @@ export class AdminComponent{
         var myReader:FileReader = new FileReader();
 
         myReader.onloadend = (e) => {
-        this.newPainting.painting = myReader.result;
-        this.newPainting.painting = this.newPainting.painting.substring(23);
+            this.newPainting.painting = myReader.result;
+            this.newPainting.painting = this.newPainting.painting.substring(23);
+        }
+        myReader.readAsDataURL(file);
+    }
+
+    public onImgChange2(event){
+        this.readThis(event.target);
+    }
+
+    readThis2(inputValue: any): void {
+        var file:File = inputValue.files[0];
+        var myReader:FileReader = new FileReader();
+
+        myReader.onloadend = (e) => {
+            this.newPainting.imprint = myReader.result;
+            this.newPainting.imprint = this.newPainting.painting.substring(23);
         }
         myReader.readAsDataURL(file);
     }

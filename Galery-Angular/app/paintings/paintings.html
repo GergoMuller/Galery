@@ -13,7 +13,7 @@
                 <span class="">{{painting.type}}</span><br/>
                 <span class="">{{painting.dimensions}}</span><br/>
                 <span class="">{{painting.year}}</span><br/>
-                <span class="">{{painting.price}}$</span> 
+                <span class="">{{painting.price}} Ft</span> 
             </div>
             <img id="p{{i}}" class="painting" src="data:image/jpg;base64,{{painting.painting}}" alt="Andrew Manaylo"
                 (click)="showBig(i)" data-toggle="modal" data-target="#fullViewModal">    
@@ -33,13 +33,13 @@
       </div>
       <div class="modal-body" style="padding: 0px!important">
           <div class="row">
-              <h3 class="full-pic col-md-5 col-xs-offset-1 full-section-title"> original</h3>
-              <h3 class="full-pic col-md-5 full-section-title" style="margin-left: 40px"> imprint</h3> 
+              <h3 class="full-pic col-md-5 col-xs-offset-1 full-section-title"> Eredeti</h3>
+              <h3 class="full-pic col-md-5 full-section-title" style="margin-left: 40px"> Lenyomat</h3> 
           </div>
           <div class="row fullp-cont">
             <a (click)="back()" class="col-md-1 back-forth"><i class="glyphicon glyphicon-chevron-left"></i> </a>
             <img class="full-pic col-md-5" src="data:image/jpg;base64,{{selectedPainting.painting}}" alt="ORIGINAL">
-            <img class="full-pic col-md-5" src="data:image/jpg;base64,{{selectedPainting.painting}}" alt="IMPIRINT">
+            <img class="full-pic col-md-5" src="data:image/jpg;base64,{{selectedPainting.imprint}}" alt="IMPIRINT">
             <a (click)="forward()" class="col-md-1 back-forth"><i class="glyphicon glyphicon-chevron-right"></i> </a>
           </div>
           <div *ngIf="isAdmin" class="row">

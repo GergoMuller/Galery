@@ -1,6 +1,6 @@
 /* Main page nav*/
 body{
-  background-color: #fff!important;
+  background-color: #fffef9!important;
 }
 
 main{
@@ -10,7 +10,7 @@ main{
 }
 .navdiv{
   position: fixed;
-  background-color: #fff;
+  background-color: #fffef9;
   transition: background-color 200ms linear;
   width: 100%; 
   z-index: 100;
@@ -20,7 +20,7 @@ main{
 
 .nav2 {
   background-color: rgba(35,16,1,0.98) !important;
-  color: #fff!important;
+  color: #fffef9!important;
   transition: background-color 200ms linear;
 }
 
@@ -80,7 +80,7 @@ ul.nav a:hover, ul.nav a:focus, ul.nav a:active {
   margin-bottom: 50px;
 }
 
-#browse{
+#browse, #imp{
   cursor: pointer; 
 }
 
