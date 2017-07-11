@@ -22,7 +22,7 @@ var AdminComponent = (function () {
         var _this = this;
         this.service.savePainting(this.newPainting)
             .subscribe(function (res) { return _this.resultString = res; }, function (error) { console.log(error); _this.resultString = "ERROR"; }, function () { return console.log("REST post painting done"); });
-        setTimeout(function () { return _this.refreshEvent.emit(); }, 500);
+        setTimeout(function () { return _this.refreshEvent.emit(); }, 800);
     };
     AdminComponent.prototype.ngOnInit = function () {
         var a = $('#browse');
@@ -48,7 +48,7 @@ var AdminComponent = (function () {
         myReader.readAsDataURL(file);
     };
     AdminComponent.prototype.onImgChange2 = function (event) {
-        this.readThis(event.target);
+        this.readThis2(event.target);
     };
     AdminComponent.prototype.readThis2 = function (inputValue) {
         var _this = this;
@@ -56,7 +56,7 @@ var AdminComponent = (function () {
         var myReader = new FileReader();
         myReader.onloadend = function (e) {
             _this.newPainting.imprint = myReader.result;
-            _this.newPainting.imprint = _this.newPainting.painting.substring(23);
+            _this.newPainting.imprint = _this.newPainting.imprint.substring(23);
         };
         myReader.readAsDataURL(file);
     };

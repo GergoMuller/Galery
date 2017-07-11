@@ -208,3 +208,20 @@ ul.nav a:hover, ul.nav a:focus, ul.nav a:active {
     height: 600px;
 }
 
+
+/* Contact */
+
+.conttext{
+  font-size: 22px;
+  font-weight: 650;
+  color: #111622;
+  margin-top: 40px;
+  font-family: 'Cardo', Georgia, "Times New Roman", serif;
+  font-style: italic;
+}
+
+.contactbracket{
+  border-left: solid #111622 1px ;
+  border-right: solid #111622 1px ;
+  margin-bottom: 50px;
+}

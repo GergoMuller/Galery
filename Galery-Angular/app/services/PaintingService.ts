@@ -39,7 +39,6 @@ export class PaintingService{
 
     public delete(id: number): void{
         let url = this.url + "/" + id;
-        alert(url);
         this.http.get(url).subscribe();
     }
 

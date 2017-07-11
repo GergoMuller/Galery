@@ -25,7 +25,7 @@ export class AdminComponent{
                 error => { console.log(error); this.resultString = "ERROR"},
                 () => console.log("REST post painting done")
             );
-        setTimeout(() => this.refreshEvent.emit(), 500);
+        setTimeout(() => this.refreshEvent.emit(), 800);
     } 
 
     ngOnInit(){
@@ -54,7 +54,7 @@ export class AdminComponent{
     }
 
     public onImgChange2(event){
-        this.readThis(event.target);
+        this.readThis2(event.target);
     }
 
     readThis2(inputValue: any): void {
@@ -63,7 +63,7 @@ export class AdminComponent{
 
         myReader.onloadend = (e) => {
             this.newPainting.imprint = myReader.result;
-            this.newPainting.imprint = this.newPainting.painting.substring(23);
+            this.newPainting.imprint = this.newPainting.imprint.substring(23);
         }
         myReader.readAsDataURL(file);
     }

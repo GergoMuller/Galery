@@ -25,6 +25,9 @@ public class Painting implements Serializable {
 	@Lob
 	private byte[] painting;
 	
+	@Lob
+	private byte[] imprint;
+	
 	private String title;
 	
 	private String dimensions;
@@ -92,5 +95,15 @@ public class Painting implements Serializable {
 	public void setPrice(double price) {
 		this.price = price;
 	}
+
+	public byte[] getImprint() {
+		return imprint;
+	}
+
+	public void setImprint(byte[] imprint) {
+		this.imprint = imprint;
+	}
+	
+	
 
 }

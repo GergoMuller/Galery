@@ -38,7 +38,6 @@ var PaintingService = (function () {
     };
     PaintingService.prototype.delete = function (id) {
         var url = this.url + "/" + id;
-        alert(url);
         this.http.get(url).subscribe();
     };
     return PaintingService;
